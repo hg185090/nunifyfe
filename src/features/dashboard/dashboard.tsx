@@ -1,5 +1,18 @@
+import { CardContainer } from './card'
+import '../../App.css';
+
 const Landing = () => {
-    return <h1>Loading</h1>;
+    return (
+        <div className='dashboard'>
+            <CardContainer />
+            <CardContainer />
+            <CardContainer />
+            <CardContainer />
+            <CardContainer />
+            <CardContainer />
+            <CardContainer />
+        </div>
+    );
 };
 
 
