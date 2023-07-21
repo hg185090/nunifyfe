@@ -6,6 +6,7 @@ import List from '@mui/material/List';
 const dummyOrderDetails1 = {
     orderID: "123Arwrwy67BC",
     orderTime: "2023-07-21T14:45:30",
+    companyName: "KFC",
     orderItems: [
         {
             itemName: "Burger",
@@ -21,6 +22,7 @@ const dummyOrderDetails1 = {
 const dummyOrderDetails2 = {
     orderID: "3143r38wrrwhABC",
     orderTime: "2023-07-21T14:45:30",
+    companyName: "Dominos",
     orderItems: [
         {
             itemName: "Chicken BarBeque Pizza",
@@ -93,18 +95,24 @@ export default function Orderstatus() {
     return (
         <MainContainer>
             <AddsContainer>
-                Ads
+                <iframe
+                    width="100%"
+                    height="100%"
+                    src={"https://www.youtube.com/watch?v=xl32pXkAQAI"}
+                    title="Youtube Player"
+                    allowFullScreen
+                />
             </AddsContainer>
             <CardsContainer>
                 {OrdersData.map((data, index) => {
                     return (
                         <CustomCard>
                             <Typography>Estimated time</Typography>
-                            <Typography sx={{ fontSize: '20px', fontWeight: 'bold' }}>{getEstimatedTime(data.time,data.OrderDetails.orderTime)} Minutes</Typography>
+                            <Typography sx={{ fontSize: '20px', fontWeight: 'bold' }}>{getEstimatedTime(data.time, data.OrderDetails.orderTime)} Minutes</Typography>
                             <Typography>{getStatus(data.status)}</Typography>
                             <Typography sx={{ fontSize: '20px', fontWeight: 'bold' }}>Order Details</Typography>
                             <HorizontalLine />
-                            <Typography>Restaurant Name</Typography>
+                            <Typography>{data.OrderDetails.companyName}</Typography>
                             <Typography>Order #{data.OrderDetails.orderID}</Typography>
                             <HorizontalLine />
                             <List sx={{ width: '80%', maxWidth: 360, bgcolor: 'background.paper' }}>
