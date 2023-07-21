@@ -32,6 +32,12 @@
   color: #FA4A0C;
 }
 
-.dashboard{
-  margin-top: 50px;
+.restaurants{
+  margin-top: 15px;
+}
+
+.carousel {
+  height:350px;
+  margin: auto;
+  overflow:hidden
 }
