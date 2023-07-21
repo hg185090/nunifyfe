@@ -4,7 +4,10 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-
+import json from "./menu.json";
+import Button from '@mui/material/Button';
+import ButtonGroup from '@mui/material/ButtonGroup';
+import Rating from '@mui/material/Rating';
 
 interface TabPanelProps {
     children?: React.ReactNode;
@@ -38,10 +41,20 @@ const RestaurantMenu = () => {
     const handleChange = (event: React.SyntheticEvent, newValue: number) => {
         setValue(newValue);
     };
+
+    const [counter, setCounter] = React.useState(0);
+
+    const handleIncrement = () => {
+        setCounter(counter + 1);
+    };
+
+    const handleDecrement = () => {
+        setCounter(counter - 1);
+    };
     return (
         <div className='restaurantMenu'>
             <h1>KFC</h1>
-            <Box sx={{ maxWidth: { xs: 320, sm: 680 }, margin: 'auto', bgcolor: 'background.paper' }}>
+            <Box sx={{ width: '90%', margin: 'auto', bgcolor: 'background.paper' }}>
                 <Tabs
                     value={value}
                     onChange={handleChange}
@@ -49,16 +62,40 @@ const RestaurantMenu = () => {
                     scrollButtons="auto"
                     aria-label="scrollable auto tabs example"
                 >
-                    <Tab label="Item One" />
-                    <Tab label="Item Two" />
-                    <Tab label="Item Three" />
-                    <Tab label="Item Four" />
-                    <Tab label="Item Five" />
-                    <Tab label="Item Six" />
-                    <Tab label="Item Seven" />
+                    <Tab label="Soups & Salads" />
+                    <Tab label="Sandwiches & Burgers" />
+                    <Tab label="Buffalo Wings" />
+                    <Tab label="Pizza & Pasta" />
+                    <Tab label="Sides" />
+                    <Tab label="Deserts" />
+                    <Tab label="Combo Logic Levels" />
+                    <Tab label="Modifier Tests" />
+                    <Tab label="All items" />
+                    <Tab label="AM-Only" />
                 </Tabs>
                 <TabPanel value={value} index={0}>
-                    Item One
+                    {(Object.entries(json) || []).map(([key, value]) => {
+                        return (                  
+                            <div  className="menucardDiv" >
+                                <div className='imgDIv'>
+                                    <img  className="cardImg" src={value.image ? value.image : 'https://geekflare.com/wp-content/uploads/2023/03/img-placeholder.png'} alt="Girl in a jacket" width="50" height="60" />
+                                </div>
+                                <p className="cardHeader">{value.title}</p>
+                                <p className="cardtext">{value.description}</p>
+                                <div>
+                                <Rating name="read-only" value={4} readOnly />
+                                </div>
+                                {counter === 0 && <Button variant="contained" onClick={handleIncrement} className='cartButton'>Add to cart</Button> }
+                                {counter > 0 &&
+                                    <ButtonGroup size="small" aria-label="small outlined button group">
+                                        <Button onClick={handleIncrement}>+</Button>
+                                            <Button>{counter}</Button>
+                                            <Button onClick={handleDecrement}>-</Button>
+                                    </ButtonGroup>
+                                }
+                            </div>
+                        );
+                    })}
                 </TabPanel>
             </Box>
         </div>
