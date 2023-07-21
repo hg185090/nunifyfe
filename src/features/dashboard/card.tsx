@@ -1,11 +1,18 @@
 import '../../App.css';
+import json from "./restaurants.json";
 
 const Card = () => {
     return (
-        <div className="cardDiv">
-            <img  className="cardImg" src="https://upload.wikimedia.org/wikipedia/en/thumb/b/bf/KFC_logo.svg/1200px-KFC_logo.svg.png" alt="Girl in a jacket" width="50" height="60" />
-            <h2 className="cardHeader">KFC</h2>
-            <p className="cardtext">Stall no:1</p>
+        <div className='restaurants'>
+            {(Object.entries(json) || []).map(([key, value]) => {
+                    return (                  
+                        <div className="cardDiv">
+                            <img  className="cardImg" src={value.image} alt="Girl in a jacket" width="50" height="60" />
+                            <h2 className="cardHeader">{value.title}</h2>
+                            <p className="cardtext">{value.description}</p>
+                        </div>
+                    );
+                })}
         </div>
     )
 };
