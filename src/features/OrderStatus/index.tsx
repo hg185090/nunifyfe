@@ -89,7 +89,6 @@ const CardsContainer = styled('div')({
 const CustomCard = styled(Card)({
     "display": "flex",
     "margin": "5px",
-    "width": "25%",
     "flexDirection": "column",
     "justifyContent": "space-around",
     "alignItems": "center",
