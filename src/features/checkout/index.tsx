@@ -34,13 +34,13 @@ const cardsWrapperStyle = {
 };
 
 const CardsContainer = styled("div")({
-  width: "100%",
+  width: "500px",
   display: "flex",
   flexDirection: "column",
   justifyContent: "center",
-  alignItems: "center",
-  borderBlockColor: "green",
+  textAlign: 'left',
   backgroundColor: "white",
+  margin: "0 auto"
 });
 
 const CustomCard = styled(Card)({
@@ -49,16 +49,15 @@ const CustomCard = styled(Card)({
   margin: "10px",
   width: "50%",
   flexDirection: "column",
-  alignItems: "center",
   backgroundColor: "white",
-  borderColor: "1px solid",
-  boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
+  border: "none"
+  // borderColor: "1px solid",
+  // boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
 });
 
 const HorizontalLine = styled("div")({
   color: "black",
   border: "2px sloid",
-  backgroundColor: "green",
   height: 0.5,
   width: "90%",
 });
@@ -68,19 +67,18 @@ export default function CheckOut() {
     <MainContainer>
       <div style={cardsWrapperStyle}>
         <CardsContainer>
-          <CustomCard>
+          {/* <CustomCard> */}
             <Typography
               sx={{
                 fontSize: "20px",
                 fontWeight: "bold",
                 margin: "10px",
-                color: "green",
-                fontPalette: "light"
+                color: "#000",
+                alignItems: 'left'
               }}
             >
               Apply Coupon
             </Typography>
-            <HorizontalLine />
             <div style={{display:'flex',flexDirection:'row',alignItems:'center',justifyContent:'space-around',width:'400px'}}>
               <TextField
                 id="outlined-basic"
@@ -92,19 +90,17 @@ export default function CheckOut() {
               />
               <Button variant="contained" sx={{height:'40%'}} color="success">Apply</Button>
             </div>
-          </CustomCard>
+          {/* </CustomCard> */}
           <CustomCard>
             <Typography
               sx={{
                 fontSize: "20px",
                 fontWeight: "bold",
                 margin: "10px",
-                color: "green",
               }}
             >
               Order Summary
             </Typography>
-            <HorizontalLine />
             <Typography sx={{ fontSize: "15px", margin: "0.1px" }}>
               OrderId: {dummyOrderDetails.orderID}
             </Typography>
@@ -119,13 +115,12 @@ export default function CheckOut() {
             </Typography>
             
           </CustomCard>
-          <CustomCard>
+          {/* <CustomCard> */}
             <Typography
-              sx={{ fontSize: "20px", fontWeight: "bold", color: "green" }}
+              sx={{ fontSize: "20px", fontWeight: "bold"}}
             >
               Customer Info
             </Typography>
-            <HorizontalLine />
             <TextField
               id="outlined-basic"
               label="Name"
@@ -150,14 +145,13 @@ export default function CheckOut() {
               size="small"
               margin="dense"
             />
-          </CustomCard>
-          <CustomCard>
+          {/* </CustomCard> */}
+          {/* <CustomCard> */}
             <Typography
-              sx={{ fontSize: "20px", fontWeight: "bold", color: "green" }}
+              sx={{ fontSize: "20px", fontWeight: "bold" }}
             >
               Payment
             </Typography>
-            <HorizontalLine />
             <TextField
               id="outlined-basic"
               label="Card Number"
@@ -183,7 +177,7 @@ export default function CheckOut() {
               margin="dense"
             />
             <Button variant="contained" color="secondary" onClick={Orderstatus}>Submit</Button>
-          </CustomCard>
+          {/* </CustomCard> */}
         </CardsContainer>
       </div>
     </MainContainer>
