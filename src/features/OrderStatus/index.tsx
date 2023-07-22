@@ -183,7 +183,7 @@ export default function Orderstatus() {
     return (
         <MainContainer>
             <AddsContainer>
-                <ReactPlayer height="100%" width="100%" playing={true} muted={true} loop={true} url='https://www.youtube.com/watch?v=E5YjpLx3xq0' />
+                <ReactPlayer height="100%" width="100%" playing={true} muted={true} loop={true} url='https://www.youtube.com/watch?v=KF-EJw0wFoc' />
             </AddsContainer>
             <CardsContainer>
                 {OrdersData.map((data, index) => {
