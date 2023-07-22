@@ -8,6 +8,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import { TextField, Autocomplete, InputAdornment } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 
 const items2 = [
   {
@@ -46,8 +47,9 @@ export default function SearchAppBar() {
             color="inherit"
             aria-label="open drawer"
             sx={{ mr: 2 }}
+            href='/'
           >
-            <MenuIcon />
+            <HomeOutlinedIcon />
           </IconButton>
           <Typography
             variant="h6"
@@ -66,8 +68,8 @@ export default function SearchAppBar() {
             options={items}
             sx={{
               width: '350px',
-              height: '75px',
-              marginTop: '15px',
+            //   height: '75px',
+            //   marginTop: '15px',
             }}
             renderInput={(params) => (
               <TextField
