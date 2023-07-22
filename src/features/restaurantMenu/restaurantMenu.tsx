@@ -12,6 +12,8 @@ import Fab from '@mui/material/Fab';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Drawer from '@mui/material/Drawer';
 import Badge from '@mui/material/Badge';
+import { BottomNavigation } from '@mui/material';
+import { Link } from "react-router-dom";
 
 interface TabPanelProps {
     children?: React.ReactNode;
@@ -84,44 +86,9 @@ function TabPanel(props: TabPanelProps) {
 
     
 
-    const list = (anchor: any) => (
-        <Box
-          sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 400 }}
-          role="presentation"
-          onClick={toggleDrawer(anchor, false)}
-          onKeyDown={toggleDrawer(anchor, false)}
-        >
-          <div className='cartDetails'>
-            <div  className="innerCartDiv">
-            <h3 className='itemdetailsheader'>Items</h3>
-
-                    {menudata.map((value, index) => {
-                        return (                  
-                            <div className='individualItem'>
-                                <p className="innercardHeader">{value.title} - ${value.cost} </p>
-                                <ButtonGroup className='buttonGroup' size="small" color='success' aria-label="small outlined button group">
-                                        <Button onClick={() => handleDecrement(index)}>-</Button>
-                                            <Button>{menudata[index].count}</Button>
-                                        <Button onClick={() => handleIncrement(index)}>+</Button>
-                                    </ButtonGroup>
-                                    <div>
-                                    <ButtonGroup className='buttonGroup' size="small" color='success' aria-label="small outlined button group">
-                                        <Button variant="text">edit</Button>
-                                        <Button color='error' variant="text">remove</Button>
-                                    </ButtonGroup>
-                                    </div>
-
-                            </div>
-                        );
-                    })}
-                    <div>
-                        <span className='slabel'>Sub total</span>
-                        <span className='stotal'>{totalCost}</span>
-                    </div>
-            </div>
-          </div>
-        </Box>
-      );
+    // const list = (anchor: any) => (
+        
+    //   );
     return (
         <div className='restaurantMenu'>
             <h1>KFC</h1>
@@ -182,7 +149,49 @@ function TabPanel(props: TabPanelProps) {
                         open={state['right']}
                         onClose={toggleDrawer('right', false)}
                     >
-                        {list('right')}
+                        <Box
+                            sx={{ width: 400 }}
+                            role="presentation"
+                            // onClick={toggleDrawer('right', false)}
+                            // onKeyDown={toggleDrawer('right', false)}
+                            >
+                            <div className='cartDetails'>
+                                <Box sx={{ boxShadow: 1 }}>
+                                    <h4 className='headercart'>Cart</h4>
+                                </Box>
+                                <div  className="innerCartDiv">
+                                <h3 className='itemdetailsheader'>Items</h3>
+
+                                        {menudata.map((value, index) => {
+                                            return (                  
+                                                value.count >0 && 
+                                                <div className='individualItem'>
+                                                    <p className="innercardHeader">{value.title} - ${value.cost} </p>
+                                                    <ButtonGroup className='buttonGroup' size="small" color='success' aria-label="small outlined button group">
+                                                            <Button onClick={() => handleDecrement(index)}>-</Button>
+                                                                <Button>{menudata[index].count}</Button>
+                                                            <Button onClick={() => handleIncrement(index)}>+</Button>
+                                                        </ButtonGroup>
+                                                        <div>
+                                                        <ButtonGroup className='buttonGroup' size="small" color='success' aria-label="small outlined button group">
+                                                            <Button variant="text">edit</Button>
+                                                            <Button color='error' variant="text">remove</Button>
+                                                        </ButtonGroup>
+                                                        </div>
+                                                        
+
+                                                </div>
+                                            );
+                                        })}
+                                        <div>
+                                            <span className='slabel'>Sub total</span>
+                                            <span className='stotal'>{totalCost}</span>
+                                        </div>
+                                </div>
+                            </div>
+                            
+                            {/* <Link to={} className='footerbutton'color='success'>Proceed to checkout</Link> */}
+                        </Box>
                     </Drawer>
                 </React.Fragment>
             </Box>
