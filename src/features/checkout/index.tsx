@@ -69,7 +69,7 @@ const HorizontalLine = styled("div")({
   width: "90%",
 });
 
-export default function checkOut() {
+export default function CheckOut() {
   return (
     <MainContainer>
       <div style={cardsWrapperStyle}>
