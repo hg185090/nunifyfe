@@ -4,27 +4,15 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import { TextField, Autocomplete, InputAdornment } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
+import json from '../features/restaurantMenu/menu.json';
 
-const items2 = [
-  {
-    menu: 'menu1',
-    items: [
-      {
-        title: 'Biryani',
-      },
-      {
-        title: 'Chicken Biryani',
-      },
-      {
-        title: 'Ceaser Salad',
-      },
-    ],
-  },
-];
+const items2 = Object.values(json)
+  .map((i) => i.items)
+  .flat();
 
 export default function SearchAppBar() {
   const navigate = useNavigate();
@@ -32,8 +20,9 @@ export default function SearchAppBar() {
   const [items, setItems] = useState<string[]>(['']);
 
   useEffect(() => {
-    const i = items2[0].items;
-    setItems(i.filter((i) => i.title.includes(searchTerm)).map((i) => i.title));
+    setItems(
+      items2.filter((i) => i.title.includes(searchTerm)).map((i) => i.title)
+    );
   }, [searchTerm]);
 
   return (
@@ -46,8 +35,9 @@ export default function SearchAppBar() {
             color="inherit"
             aria-label="open drawer"
             sx={{ mr: 2 }}
+            href="/"
           >
-            <MenuIcon />
+            <HomeOutlinedIcon />
           </IconButton>
           <Typography
             variant="h6"
@@ -66,8 +56,8 @@ export default function SearchAppBar() {
             options={items}
             sx={{
               width: '350px',
-              height: '75px',
-              marginTop: '15px',
+              //   height: '75px',
+              //   marginTop: '15px',
             }}
             renderInput={(params) => (
               <TextField

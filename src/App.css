@@ -91,7 +91,7 @@
   text-align: center;
   margin: 20px 15px 10px 15px;
   width: 94%;
-  border-radius: 25px;
+  border-radius: 10px;
   box-shadow: 0 0 50px #ccc;
   background-color: #fff;
   float:left;
@@ -101,8 +101,10 @@
 
 .itemdetailsheader{
   /* padding-left: 55px; */
+  color: #28a745;
+  text-align: left;
+  padding-left: 10px;
 }
-
 .individualItem{
   padding-bottom: 10px;
 }
