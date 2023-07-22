@@ -73,3 +73,57 @@
   margin-bottom: 10px;
   background-color: green !important;
 }
+
+.floatbadge{
+    position: absolute !important;
+    bottom: 15px;
+    right: 10px;
+}
+
+.floatCart{
+  position: relative;
+  top: -7px;
+  z-index: 0 !important;
+  right: 7px;
+}
+
+.innerCartDiv{
+  text-align: center;
+  margin: 20px 15px 10px 15px;
+  width: 94%;
+  border-radius: 25px;
+  box-shadow: 0 0 50px #ccc;
+  background-color: #fff;
+  float:left;
+  text-decoration: none !important;
+  padding-bottom: 10px;
+}
+
+.itemdetailsheader{
+  /* padding-left: 55px; */
+}
+
+.individualItem{
+  padding-bottom: 10px;
+}
+
+.buttonGroup{
+  /* float: right; */
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.innercardHeader {
+  float: left;
+  padding-left: 10px;
+}
+
+.slabel{
+  float: left;
+  padding-left: 10px;
+}
+
+.stotal{
+  float: right;
+  padding-right: 20px;
+}

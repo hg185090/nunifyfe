@@ -1,12 +1,20 @@
 {
     "menu1": {
-      "title": "Caesar's Legion Salad",
-      "description": "$5.75 | 250 Calories",
-      "image": "https://images.pexels.com/photos/1059905/pexels-photo-1059905.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-    },
-    "restaurant2": {
-      "title": "Soup du Jouroooo",
-      "description": "$7.75 | 450 Calories",
-      "image": "https://images.pexels.com/photos/2097090/pexels-photo-2097090.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-    }
+        "items" : [ {
+            "title": "Caesar's Legion Salad",
+            "description": "$5.75 | 250 Calories",
+            "cost": 5.75,
+            "rating": 4,
+            "count": 0,
+            "image": "https://images.pexels.com/photos/1059905/pexels-photo-1059905.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          }, {
+            "title": "Soup du Jourooooooo",
+            "description": "$7.75 | 450 Calories",
+            "rating": 3,
+            "cost": 7.75,
+            "count": 0,
+            "image": "https://images.pexels.com/photos/2097090/pexels-photo-2097090.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          }
+        ]
+    } 
 }
