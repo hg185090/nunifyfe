@@ -72,7 +72,6 @@ export default function SearchAppBar() {
             renderInput={(params) => (
               <TextField
                 {...params}
-                label="Search cuisine or restaurant"
                 placeholder="Search cuisine or restaurant"
                 InputLabelProps={{
                   style: { color: 'white' },
