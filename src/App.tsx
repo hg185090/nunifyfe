@@ -15,7 +15,7 @@ function App() {
           <Routes>
               <Route path="/" element={<LandingContainer />} />
               <Route path="menu" element={<RestaurantMenuContainer />} />
-              <Route path="heckOut" element={<CheckOut />} />
+              <Route path="checkOut" element={<CheckOut />} />
               <Route path="orderstatus" element={<Orderstatus />} />
           </Routes>
         </BrowserRouter>
