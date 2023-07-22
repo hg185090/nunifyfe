@@ -21,17 +21,29 @@ const StyledTileContent = styled('div')({
   scrollbarWidth: 'none',
 });
 
-const Tile = () => (
+interface TileProps {
+  title: string;
+  rating: string;
+  prepTime: string;
+}
+
+const Tile = (props: TileProps) => (
   <StyledTile>
     <div style={{ display: 'flex' }}>
-      <div style={{ display: 'flex', flexDirection: 'column' }}>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'flex-start',
+        }}
+      >
         <Typography sx={{ fontSize: '2.5rem', fontWeight: 'bold' }}>
-          Hotel Sitara Grand
+          {props.title}
         </Typography>
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           <StarsRounded style={{ color: 'green', fontSize: '40px' }} />
           <Box sx={{ fontWeight: '500', fontSize: '2rem', marginLeft: '5px' }}>
-            3.7 (10K+) . 42 mins
+            {props.rating} . {props.prepTime}
           </Box>
         </Box>
       </div>
