@@ -12,7 +12,7 @@ import { ReactElement, JSXElementConstructor, ReactNode, ReactPortal } from 'rea
 const dummyOrderDetails1 = {
     orderID: "123Arwrwy67BC",
     orderTime: "2023-07-21T14:45:30",
-    companyName: "KFC",
+    companyName: "Dominos",
     orderItems: [
         {
             itemName: "Burger",
@@ -26,23 +26,23 @@ const dummyOrderDetails1 = {
         },
     ],
     status: 'preparing',
-    time: 5,
+    time: 15,
 }
 
 const dummyOrderDetails2 = {
     orderID: "3143r38wrrwhABC",
     orderTime: "2023-07-21T14:45:30",
-    companyName: "Dominos",
+    companyName: "KFC",
     orderItems: [
         {
-            itemName: "Chicken BarBeque Pizza",
-            price: 19.5,
+            itemName: "Caesar's Legion Salad",
+            price: 5.75,
             quantity: 2
         },
         {
-            itemName: "Chesse Pizza",
-            price: 11.9,
-            quantity: 1
+            itemName: "Cheeze Broccoli Soup",
+            price: 6.25,
+            quantity: 3
         },
     ]
 }
@@ -50,14 +50,14 @@ const dummyOrderDetails2 = {
 
 const OrdersData = [
     {
+        status: 'placed',
+        time: 15,
+        OrderDetails: dummyOrderDetails2
+    },
+    {
         status: 'preparing',
         time: 5,
         OrderDetails: dummyOrderDetails1
-    },
-    {
-        status: 'placed',
-        time: 10,
-        OrderDetails: dummyOrderDetails2
     }
 ];
 
@@ -88,12 +88,13 @@ const CardsContainer = styled('div')({
 
 const CustomCard = styled(Card)({
     "display": "flex",
-    "margin": "5px",
+    "margin": "17px 12px",
     "flexDirection": "column",
     "justifyContent": "space-around",
     "alignItems": "center",
     "background": "white",
-    "boxShadow": "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
+    "boxShadow": "0 0 50px #ccc",
+    "borderRadius": "22px"
 })
 
 const HorizontalLine = styled('div')({
@@ -189,8 +190,8 @@ export default function Orderstatus() {
                 {OrdersData.map((data, index) => {
                     return (
                         <CustomCard>
-                            <Typography>Estimated time</Typography>
-                            <Typography sx={{ fontSize: '20px', fontWeight: 'bold' }}>{getEstimatedTime(data.time, data.OrderDetails.orderTime)} Minutes</Typography>
+                            {/* <Typography>Estimated time</Typography> */}
+                            <Typography sx={{ fontSize: '20px', fontWeight: 'bold' }}>Estimated time: <span> {data.time} Minutes</span></Typography>
                             <Stack sx={{ width: '90%' }} spacing={4}>
                                 <Stepper alternativeLabel activeStep={getStatus(data.status)} connector={<ColorlibConnector />}>
                                     {steps.map((label) => (
@@ -202,7 +203,7 @@ export default function Orderstatus() {
                             </Stack>
                             <Typography sx={{ fontSize: '20px', fontWeight: 'bold',color:'green' }}>Order Details</Typography>
                             <HorizontalLine />
-                            <Typography>{data.OrderDetails.companyName}</Typography>
+                            <Typography style={{fontWeight: 'bold', fontSize: '25px'}}>{data.OrderDetails.companyName}</Typography>
                             <Typography>Order #{data.OrderDetails.orderID}</Typography>
                             <HorizontalLine />
                             <List sx={{ width: '80%', maxWidth: 360, bgcolor: 'background.paper',textAlign:'left'}}>
@@ -212,7 +213,7 @@ export default function Orderstatus() {
                                     )
                                 })}
                             </List>
-                            <Typography>Total  $ {getPrice(data.OrderDetails.orderItems)}</Typography>
+                            <Typography style={{fontWeight: 'bold', fontSize: '30px'}}>Total  ${getPrice(data.OrderDetails.orderItems)}</Typography>
                         </CustomCard>
                     );
                 })}
@@ -220,3 +221,4 @@ export default function Orderstatus() {
         </MainContainer>
     )
 }
+ 

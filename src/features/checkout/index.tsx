@@ -3,6 +3,7 @@ import TextField from '@mui/material/TextField/TextField';
 import { Button, Typography, styled } from '@mui/material';
 import '../../App.css';
 import Orderstatus from '../OrderStatus';
+import { useNavigate } from "react-router-dom";
 
 const dummyOrderDetails = {
   orderID: '123Arwrwy67BC',
@@ -58,6 +59,7 @@ const HorizontalLine = styled('div')({
 });
 
 export default function CheckOut() {
+  const navigate = useNavigate();
   return (
     <MainContainer>
       <div
@@ -219,7 +221,7 @@ export default function CheckOut() {
           <span
             style={{ fontWeight: 'bold', position: 'relative', left: '325px' }}
           >
-            $30.00
+            $30.25
           </span>
         </Typography>
       </div>
@@ -325,7 +327,7 @@ export default function CheckOut() {
         variant="contained"
         color="success"
         sx={{ marginBottom: '10px' }}
-        onClick={Orderstatus}
+        onClick={()=>navigate('/orderstatus')}
       >
         Submit
       </Button>
