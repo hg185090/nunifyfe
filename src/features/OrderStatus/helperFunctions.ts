@@ -1,11 +1,13 @@
 export const getStatus = (status : string) => {
     switch(status){
         case 'placed' :
-            return "Your order is being Placed"
+            return 0
+        case 'accepted':
+            return 1
         case 'preparing':
-            return "Your order is being Prepared"
+            return 2
         case 'ready':
-            return "Hooray !! your order is Ready" 
+            return 3 
     }
 } 
 
@@ -16,3 +18,4 @@ export const getEstimatedTime = (minutes : number , orderTime : string) => {
     const diff = expectedTime.getTime() - currentTime.getTime();
     return Math.round(diff / 60000);
 }
+
