@@ -138,3 +138,23 @@
   border-radius: 20px !important;
   margin-left: 90px !important;
 }
+
+.left{
+  display: flex;
+  align-items: flex-start;
+  align-content: flex-start;
+  flex-basis:75%;
+  flex-direction: column;
+}
+
+.tile-content::-webkit-scrollbar{
+  display: none;
+}
+
+.tile-content::-webkit-scrollbar-thumb{
+  background-color: rgba(0,0,0,0.2);
+}
+
+.tile-content::-webkit-scrollbar-thumb:hover{
+  background-color: rgba(0,0,0,0.3);
+}
