@@ -2,16 +2,10 @@ import Card from "@mui/material/Card/Card";
 import TextField from "@mui/material/TextField/TextField";
 import {
   Button,
-  ListItem,
-  ListItemText,
   Typography,
   styled,
 } from "@mui/material";
-import List from "@mui/material/List";
-import { margin } from "@mui/system";
-import { Form } from "react-router-dom";
 import "../../App.css";
-import { wrap } from "module";
 import Orderstatus from "../OrderStatus";
 
 const dummyOrderDetails = {
@@ -81,21 +75,23 @@ export default function CheckOut() {
                 fontWeight: "bold",
                 margin: "10px",
                 color: "green",
-                fontPalette:"light"
+                fontPalette: "light"
               }}
             >
               Apply Coupon
             </Typography>
             <HorizontalLine />
-            <TextField
-              id="outlined-basic"
-              label="Please enter your coupon code"
-              variant="outlined"
-              sx={{ width: "400px" }}
-              size="small"
-              margin="dense"
-            />
-            <Button variant="outlined">Apply</Button>
+            <div style={{display:'flex',flexDirection:'row',alignItems:'center',justifyContent:'space-around',width:'400px'}}>
+              <TextField
+                id="outlined-basic"
+                label="Please enter your coupon code"
+                variant="outlined"
+                sx={{ width: "300px" }}
+                size="small"
+                margin="dense"
+              />
+              <Button variant="contained" sx={{height:'40%'}} color="success">Apply</Button>
+            </div>
           </CustomCard>
           <CustomCard>
             <Typography
@@ -121,6 +117,7 @@ export default function CheckOut() {
             <Typography sx={{ fontSize: "15px", margin: "0.1px" }}>
               pickup: {dummyOrderDetails.pickupTime}
             </Typography>
+            
           </CustomCard>
           <CustomCard>
             <Typography
@@ -185,7 +182,7 @@ export default function CheckOut() {
               size="small"
               margin="dense"
             />
-            <Button variant="outlined" onClick={Orderstatus}>Submit</Button>
+            <Button variant="contained" color="secondary" onClick={Orderstatus}>Submit</Button>
           </CustomCard>
         </CardsContainer>
       </div>
