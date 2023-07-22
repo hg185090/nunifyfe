@@ -16,26 +16,17 @@ const dummyOrderDetails1 = {
     orderItems: [
         {
             itemName: "Burger",
-            price: 120,
+            price: 12.20,
             quantity: 2
         },
         {
             itemName: "Coke",
-            price: 50,
+            price: 2.50,
             quantity: 1
         },
     ],
     status: 'preparing',
     time: 5,
-}
-
-
-const getPrice = (itemsList: any) => {
-    var sum = 0;
-    itemsList.map((val: any) => {
-        sum += val.price * val.quantity;
-    })
-    return sum;
 }
 
 const dummyOrderDetails2 = {
@@ -45,12 +36,12 @@ const dummyOrderDetails2 = {
     orderItems: [
         {
             itemName: "Chicken BarBeque Pizza",
-            price: 195,
+            price: 19.5,
             quantity: 2
         },
         {
             itemName: "Chesse Pizza",
-            price: 119,
+            price: 11.9,
             quantity: 1
         },
     ]
@@ -69,6 +60,8 @@ const OrdersData = [
         OrderDetails: dummyOrderDetails2
     }
 ];
+
+
 
 const MainContainer = styled('div')({
     "color": "white",
@@ -110,6 +103,15 @@ const HorizontalLine = styled('div')({
     "height": 0.5,
     "width": '90%',
 })
+
+
+const getPrice = (itemsList: any) => {
+    var sum = 0;
+    itemsList.map((val: any) => {
+        sum += val.price * val.quantity;
+    })
+    return sum;
+}
 
 const ColorlibConnector = styled(StepConnector)(({ theme }) => ({
     [`&.${stepConnectorClasses.alternativeLabel}`]: {
@@ -211,7 +213,7 @@ export default function Orderstatus() {
                                     )
                                 })}
                             </List>
-                            <Typography>Total  {getPrice(data.OrderDetails.orderItems)}</Typography>
+                            <Typography>Total  $ {getPrice(data.OrderDetails.orderItems)}</Typography>
                         </CustomCard>
                     );
                 })}
