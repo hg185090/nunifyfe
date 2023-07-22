@@ -24,5 +24,23 @@
             "image": "https://images.pexels.com/photos/2097090/pexels-photo-2097090.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
           }
         ]
-    } 
+      },
+    "menu2": {
+      "items" : [ {
+          "title": "American Sheese Burger",
+          "description": "$15.75 | 1250 Calories",
+          "cost": 15.75,
+          "rating": 4,
+          "count": 0,
+          "image": "https://images.ctfassets.net/l5fkpck1mwg3/1k9aUYe9TrUrWqC5XVfbOI/357529cda0ae07f56dcf5389264e3e49/Burgers_All-American_Cheeseburger___Fries.png?fm=avif&w=500&q=80"
+        }, {
+          "title": "Cheese Curd Bacon Burger",
+          "description": "$17.75 | 1450 Calories",
+          "rating": 3,
+          "cost": 17.75,
+          "count": 0,
+          "image": "https://images.ctfassets.net/l5fkpck1mwg3/3xWmOO60D7pvMHErdcXebY/9a3a2900fbb9f881d636352863edab6e/Burgers_Cheese_Curd_Bacon_Burger___Fries.png?fm=avif&w=500&q=80"
+        }
+      ]
+  } 
 }
