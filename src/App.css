@@ -73,3 +73,88 @@
   margin-bottom: 10px;
   background-color: green !important;
 }
+
+.floatbadge{
+    position: absolute !important;
+    bottom: 15px;
+    right: 10px;
+}
+
+.floatCart{
+  position: relative;
+  top: -7px;
+  z-index: 0 !important;
+  right: 7px;
+}
+
+.innerCartDiv{
+  text-align: center;
+  margin: 20px 15px 10px 15px;
+  width: 94%;
+  border-radius: 25px;
+  box-shadow: 0 0 50px #ccc;
+  background-color: #fff;
+  float:left;
+  text-decoration: none !important;
+  padding-bottom: 10px;
+}
+
+.itemdetailsheader{
+  /* padding-left: 55px; */
+}
+
+.individualItem{
+  padding-bottom: 10px;
+}
+
+.buttonGroup{
+  /* float: right; */
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.innercardHeader {
+  float: left;
+  padding-left: 10px;
+}
+
+.slabel{
+  float: left;
+  padding-left: 10px;
+}
+
+.stotal{
+  float: right;
+  padding-right: 20px;
+}
+
+.headercart{
+  text-align: center;
+}
+
+.footerbutton{
+  position: relative !important;
+  bottom: 0 !important;
+  border-radius: 20px !important;
+  margin-left: 90px !important;
+}
+
+.left{
+  display: flex;
+  align-items: flex-start;
+  align-content: flex-start;
+  flex-basis:75%;
+  flex-direction: column;
+}
+
+.tile-content::-webkit-scrollbar{
+  display: none;
+}
+
+.tile-content::-webkit-scrollbar-thumb{
+  background-color: rgba(0,0,0,0.2);
+}
+
+.tile-content::-webkit-scrollbar-thumb:hover{
+  background-color: rgba(0,0,0,0.3);
+}
