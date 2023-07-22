@@ -14,6 +14,8 @@ import Drawer from '@mui/material/Drawer';
 import Badge from '@mui/material/Badge';
 import { BottomNavigation } from '@mui/material';
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 
 interface TabPanelProps {
     children?: React.ReactNode;
@@ -83,6 +85,9 @@ function TabPanel(props: TabPanelProps) {
         updateCount(menudata.reduce((sum, { count }) => sum + count, 0));
         updateCost(menudata.reduce((sum, { count, cost }) => sum + (count * cost), 0));
     };
+
+    let navigate = useNavigate();
+
 
     
 
@@ -188,9 +193,9 @@ function TabPanel(props: TabPanelProps) {
                                             <span className='stotal'>{totalCost}</span>
                                         </div>
                                 </div>
+
                             </div>
-                            
-                            {/* <Link to={} className='footerbutton'color='success'>Proceed to checkout</Link> */}
+                            <Button className='footerbutton' variant='contained' onClick={()=>navigate('/checkout')}>Proceed to Checkout</Button>
                         </Box>
                     </Drawer>
                 </React.Fragment>
