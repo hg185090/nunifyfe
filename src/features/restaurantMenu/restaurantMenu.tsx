@@ -195,7 +195,7 @@ function TabPanel(props: TabPanelProps) {
                                 </div>
 
                             </div>
-                            <Button className='footerbutton' variant='contained' onClick={()=>navigate('/checkout')}>Proceed to Checkout</Button>
+                            <Button color='success' className='footerbutton' variant='contained' onClick={()=>navigate('/checkout')}>Proceed to Checkout</Button>
                         </Box>
                     </Drawer>
                 </React.Fragment>
