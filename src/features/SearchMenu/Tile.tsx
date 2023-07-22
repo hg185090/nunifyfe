@@ -2,6 +2,7 @@ import { styled, Typography, Box } from '@mui/material';
 import { StarsRounded, East } from '@mui/icons-material';
 import CuisineCard from './CuisineCard';
 import { Link } from 'react-router-dom';
+import json from '../restaurantMenu/menu.json';
 
 const StyledTile = styled('div')({
   margin: '20px',
@@ -21,10 +22,18 @@ const StyledTileContent = styled('div')({
   scrollbarWidth: 'none',
 });
 
+interface Item {
+  title: string;
+  cost: number;
+  rating: number;
+  image: string;
+}
+
 interface TileProps {
   title: string;
   rating: string;
   prepTime: string;
+  items: Item[];
 }
 
 const Tile = (props: TileProps) => (
@@ -61,10 +70,14 @@ const Tile = (props: TileProps) => (
       </Link>
     </div>
     <StyledTileContent className="tile-content">
-      <CuisineCard />
-      <CuisineCard />
-      <CuisineCard />
-      <CuisineCard />
+      {props.items.map((item) => (
+        <CuisineCard
+          title={item.title}
+          cost={item.cost}
+          rating={item.rating}
+          image={item.image}
+        />
+      ))}
     </StyledTileContent>
   </StyledTile>
 );

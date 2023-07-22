@@ -2,11 +2,59 @@
     "restaurant1": {
       "title": "KFC",
       "description": "stall 1",
-      "image": "https://upload.wikimedia.org/wikipedia/en/thumb/b/bf/KFC_logo.svg/1200px-KFC_logo.svg.png"
+      "image": "https://upload.wikimedia.org/wikipedia/en/thumb/b/bf/KFC_logo.svg/1200px-KFC_logo.svg.png",
+      "rating": "3.7(5492)",
+      "prepTime": "12 mins",
+      "menu": {
+        "items" : [ {
+            "title": "Caesar's Legion Salad",
+            "description": "$5.75 | 250 Calories",
+            "cost": 5.75,
+            "rating": 4,
+            "count": 0,
+            "image": "https://images.pexels.com/photos/1059905/pexels-photo-1059905.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          }, {
+            "title": "Soup du Jourooooooo",
+            "description": "$7.75 | 450 Calories",
+            "rating": 3,
+            "cost": 7.75,
+            "count": 0,
+            "image": "https://images.pexels.com/photos/2097090/pexels-photo-2097090.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          },
+          {
+            "title": "Cheeze Broccoli Soup",
+            "description": "$6.25 | 300 Calories",
+            "rating": 5,
+            "cost": 6.25,
+            "count": 0,
+            "image": "https://images.pexels.com/photos/2097090/pexels-photo-2097090.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          }
+        ]
+      }
     },
     "restaurant2": {
       "title": "Dominos",
       "description": "stall 2",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Dominos_pizza_logo.svg/1200px-Dominos_pizza_logo.svg.png"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Dominos_pizza_logo.svg/1200px-Dominos_pizza_logo.svg.png",
+      "rating": "4.2(3420)",
+      "prepTime": "15 mins",
+      "menu": {
+        "items" : [ {
+            "title": "American Sheese Burger",
+            "description": "$15.75 | 1250 Calories",
+            "cost": 15.75,
+            "rating": 5,
+            "count": 0,
+            "image": "https://images.ctfassets.net/l5fkpck1mwg3/1k9aUYe9TrUrWqC5XVfbOI/357529cda0ae07f56dcf5389264e3e49/Burgers_All-American_Cheeseburger___Fries.png?fm=avif&w=500&q=80"
+          }, {
+            "title": "Cheese Curd Bacon Burger",
+            "description": "$17.75 | 1450 Calories",
+            "rating": 2,
+            "cost": 17.75,
+            "count": 0,
+            "image": "https://images.ctfassets.net/l5fkpck1mwg3/3xWmOO60D7pvMHErdcXebY/9a3a2900fbb9f881d636352863edab6e/Burgers_Cheese_Curd_Bacon_Burger___Fries.png?fm=avif&w=500&q=80"
+          }
+        ]
+    } 
     }
 }

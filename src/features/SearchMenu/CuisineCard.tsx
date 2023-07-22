@@ -22,20 +22,37 @@ const itemStyles = {
   borderRadius: '8px',
 };
 
-const CuisineCard = () => (
+interface CuisineProps {
+  title: string;
+  cost: number;
+  rating: number;
+  image: string;
+}
+
+const CuisineCard = (props: CuisineProps) => (
   <StyledSubtile>
     <Box className="left">
-      <Box sx={{ fontWeight: '700', fontSize: '1.5rem' }}>Chicken Biryani</Box>
-      <span style={{ fontWeight: '600' }}>$10.50</span>
+      <Box
+        sx={{
+          fontWeight: '700',
+          fontSize: '1.5rem',
+          textOverflow: 'ellipsis',
+          overflow: 'hidden',
+          maxWidth: '200px',
+        }}
+      >
+        {props.title}
+      </Box>
+      <span style={{ fontWeight: '600' }}>{props.cost}</span>
       <span style={{ display: 'flex', alignItems: 'center' }}>
         {' '}
         <Rating
           name="read-only"
-          value={4}
+          value={props.rating}
           readOnly
           sx={{ fontSize: '20px' }}
         />{' '}
-        <span style={{ fontWeight: '500' }}>4.0 (5489)</span>
+        <span style={{ fontWeight: '500' }}>{props.rating}</span>
       </span>
       <Button
         variant="outlined"
@@ -54,7 +71,7 @@ const CuisineCard = () => (
     </Box>
     <Box sx={{ display: 'flex', flexDirection: 'column' }}>
       <img
-        src="https://media.istockphoto.com/id/1254720533/photo/chicken-biryani-with-yogurt-dip-popular-indian-pakistani-non-vegetarian-food.jpg?s=2048x2048&w=is&k=20&c=6-f4wQM4rqrur07htjQLlOkfIXBezJNdtorFXI1CqqM="
+        src={props.image}
         style={{ ...itemStyles, objectFit: 'cover' }}
         alt="Biryani"
       ></img>
