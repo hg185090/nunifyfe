@@ -89,7 +89,6 @@ const CardsContainer = styled('div')({
 const CustomCard = styled(Card)({
     "display": "flex",
     "margin": "5px",
-    "width": "25%",
     "flexDirection": "column",
     "justifyContent": "space-around",
     "alignItems": "center",
@@ -201,7 +200,7 @@ export default function Orderstatus() {
                                     ))}
                                 </Stepper>
                             </Stack>
-                            <Typography sx={{ fontSize: '20px', fontWeight: 'bold', }}>Order Details</Typography>
+                            <Typography sx={{ fontSize: '20px', fontWeight: 'bold',color:'green' }}>Order Details</Typography>
                             <HorizontalLine />
                             <Typography>{data.OrderDetails.companyName}</Typography>
                             <Typography>Order #{data.OrderDetails.orderID}</Typography>
